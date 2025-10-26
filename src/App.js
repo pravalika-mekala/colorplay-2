@@ -1,6 +1,7 @@
+import React from 'react';
 import './App.css';
 
-// Import all 60 button components
+// Import all 65 button components
 import Button01 from './components/buttons/Button01';
 import Button02 from './components/buttons/Button02';
 import Button03 from './components/buttons/Button03';
@@ -72,10 +73,10 @@ function App() {
     <div className="min-h-screen bg-gray-100 py-8">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">
-          ColorPlay 
+          ColorPlay
         </h1>
-        
-        {/* Responsive grid layout for buttons */}
+
+        {/* Responsive grid layout */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
           <Button01 />
           <Button02 />
@@ -103,6 +104,21 @@ function App() {
           <Button24 />
           <Button25 />
           <Button26 />
+          
+          {/* Random Color button */}
+          <button
+            className="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 transition"
+            onClick={(e) => {
+              // Pick a random button in the grid to change color
+              const buttons = document.querySelectorAll('.grid button');
+              const randomIndex = Math.floor(Math.random() * buttons.length);
+              buttons[randomIndex].style.backgroundColor =
+                '#' + Math.floor(Math.random() * 16777215).toString(16);
+            }}
+          >
+            Random Color
+          </button>
+
           <Button27 />
           <Button28 />
           <Button29 />
@@ -137,11 +153,11 @@ function App() {
           <Button58 />
           <Button59 />
           <Button60 />
-      <Button61 />
-      <Button62 />
-      <Button63 />
-      <Button64 />
-      <Button65 />
+          <Button61 />
+          <Button62 />
+          <Button63 />
+          <Button64 />
+          <Button65 />
         </div>
       </div>
     </div>
